@@ -96,13 +96,13 @@ window.xdLocalStorage = window.xdLocalStorage || (function () {
       } else {
         if (document.addEventListener) {
           // All browsers expect IE<9
-          document.addEventListener("DOMContentLoaded", function () {
+          document.addEventListener('DOMContentLoaded', function () {
             init(customOptions);
           }, false);
         } else {
           // IE < 9
-          document.attachEvent("onreadystatechange", function () {
-            if ( document.readyState === "complete" ) {
+          document.attachEvent('onreadystatechange', function () {
+            if (document.readyState === 'complete') {
               init(customOptions);
             }
           });
