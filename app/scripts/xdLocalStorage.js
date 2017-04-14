@@ -81,7 +81,7 @@ window.xdLocalStorage = window.xdLocalStorage || (function () {
   }
 
   function isDomReady() {
-    return document.readyState === 'complete';
+    return (document.readyState === 'complete');
   }
 
   return {
@@ -100,14 +100,14 @@ window.xdLocalStorage = window.xdLocalStorage || (function () {
       } else {
         if (document.addEventListener) {
           // All browsers expect IE < 9
-          document.addEventListener('onreadystatechange', function () {
+          document.addEventListener('readystatechange', function () {
             if (isDomReady()) {
               init(customOptions);
             }
-          }, false);
+          });
         } else {
           // IE < 9
-          document.attachEvent('onreadystatechange', function () {
+          document.attachEvent('readystatechange', function () {
             if (isDomReady()) {
               init(customOptions);
             }
